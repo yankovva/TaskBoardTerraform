@@ -67,7 +67,7 @@ resource "azurerm_app_service_source_control" "github" {
 }
 
 resource "azurerm_mssql_server" "sqlserver" {
-  name                         = var.sql_server_name
+  name                         = "${var.sql_server_name}_${random_integer.randoom.result}"
   resource_group_name          = azurerm_resource_group.azureRG.name
   location                     = azurerm_resource_group.azureRG.location
   version                      = "12.0"
