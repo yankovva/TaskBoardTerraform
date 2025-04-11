@@ -5,6 +5,12 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
+    
+env:
+ ARM_CLIENT_ID: ${{secrets.AZURE_CLIENT_ID}}
+ ARM_CLIENT_SECRET: ${{secrets.AZURE_CLIENT_SECRET}}
+ ARM_SUBSRIPTON_ID: ${{secrets.AZURE_CLIENT_SECRET}}
+ ARM_TENANT_ID: ${{secrets.AZRE_TENATNT_ID}}
 
 jobs:
   terraform_test:

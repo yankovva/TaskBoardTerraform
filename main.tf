@@ -5,6 +5,12 @@ terraform {
       version = "4.25.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name = "StorageRG"
+    storage_account_name = "tbstoragemagi"
+    container_name = "tbcontainermagi"
+    key = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
@@ -13,6 +19,8 @@ provider "azurerm" {
   }
   subscription_id = "1958f27d-9fb5-4dfb-a702-bb2cf86b6af3"
 }
+
+
 
 resource "random_integer" "randoom" {
   min = 10000
