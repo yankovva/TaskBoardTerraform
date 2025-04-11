@@ -76,7 +76,7 @@ resource "azurerm_mssql_server" "sqlserver" {
 }
 
 resource "azurerm_mssql_database" "database" {
-  name           = "${var.sql_server_db_name}_${random_integer.randoom.result}"
+  name           = "${var.sql_server_db_name}-${random_integer.randoom.result}"
   server_id      = azurerm_mssql_server.sqlserver.id
   collation      = "SQL_Latin1_General_CP1_CI_AS"
   license_type   = "LicenseIncluded"
